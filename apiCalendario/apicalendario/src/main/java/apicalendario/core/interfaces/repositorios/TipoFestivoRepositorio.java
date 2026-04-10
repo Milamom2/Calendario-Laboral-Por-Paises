@@ -8,3 +8,4 @@ import apicalendario.core.dominio.TipoFestivo;
 @Repository
 public interface TipoFestivoRepositorio extends JpaRepository<TipoFestivo, Long> {
 }
+// Entidad TipoFestivo creada para gestion de tipos de festivos (AB#27)
