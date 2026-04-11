@@ -1,1 +1,0 @@
-se implementaron repositorios JPA para el proyecto 
