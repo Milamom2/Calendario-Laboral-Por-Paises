@@ -17,3 +17,5 @@ Proyecto académico desarrollado en Spring Boot para gestionar calendarios labor
 - Validación de si una fecha es festiva
 - Listado de festivos por país y año
 - Generación del calendario anual
+
+## Integración Azure DevOps y GitHub completada
