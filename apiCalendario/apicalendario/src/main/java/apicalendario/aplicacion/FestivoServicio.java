@@ -69,6 +69,7 @@ public class FestivoServicio implements IFestivoServicio {
         String tipo = festivo.getTipoFestivo().getTipo().trim().toUpperCase();
 
         switch (tipo) {
+           // Calcula festivos con fecha fija en el calendario
             case "FIJO":
                 return LocalDate.of(anio, festivo.getMes(), festivo.getDia());
 
