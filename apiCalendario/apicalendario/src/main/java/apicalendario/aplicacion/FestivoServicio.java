@@ -73,6 +73,7 @@ public class FestivoServicio implements IFestivoServicio {
             case "FIJO":
                 return LocalDate.of(anio, festivo.getMes(), festivo.getDia());
 
+            // Ajusta festivos tipo puente al siguiente lunes
             case "PUENTE":
                 return moverASiguienteLunes(
                         LocalDate.of(anio, festivo.getMes(), festivo.getDia())
