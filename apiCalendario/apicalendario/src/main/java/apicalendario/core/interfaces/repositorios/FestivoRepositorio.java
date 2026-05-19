@@ -10,4 +10,5 @@ import apicalendario.core.dominio.Festivo;
 @Repository
 public interface FestivoRepositorio extends JpaRepository<Festivo, Long> {
     List<Festivo> findByPaisId(Long idPais);
+    List<Festivo> findByPaisIdAndMes(Long idPais, Integer mes);
 }
