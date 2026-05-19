@@ -30,10 +30,12 @@ public class Festivo {
     @Column(name = "diaspascua")
     private Integer diasPascua;
 
+    // Relación muchos a uno con la entidad Pais
     @ManyToOne
     @JoinColumn(name = "idpais", referencedColumnName = "id", nullable = false)
     private Pais pais;
 
+    // Relación muchos a uno con la entidad TipoFestivo
     @ManyToOne
     @JoinColumn(name = "idtipofestivo", referencedColumnName = "id", nullable = false)
     private TipoFestivo tipoFestivo;
