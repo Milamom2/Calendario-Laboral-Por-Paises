@@ -116,6 +116,7 @@ public class FestivoServicio implements IFestivoServicio {
         return false;
     }
 
+    // Lista y calcula los festivos de un país para un año específico
     @Override
     public List<FestivoCalculadoDto> listarFestivosPorPaisYAnio(Long idPais, int anio) {
         List<Festivo> festivos = repositorio.findByPaisId(idPais);
