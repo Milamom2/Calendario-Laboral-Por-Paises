@@ -64,6 +64,7 @@ public class FestivoServicio implements IFestivoServicio {
         return repositorio.findByPaisId(idPais);
     }
 
+    // Método reutilizable para calcular la fecha de un festivo según su tipo
     public LocalDate calcularFechaFestivo(Festivo festivo, int anio) {
         String tipo = festivo.getTipoFestivo().getTipo().trim().toUpperCase();
 
