@@ -63,6 +63,7 @@ public class FestivoControlador {
     }
 
     @CrossOrigin(origins = "*")
+    //endpoint GET validar fecha
     @RequestMapping(value = "/verificar", method = RequestMethod.GET)
     public boolean esFestivo(
             @RequestParam Long idPais,
