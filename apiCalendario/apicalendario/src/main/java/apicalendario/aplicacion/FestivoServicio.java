@@ -69,16 +69,16 @@ public class FestivoServicio implements IFestivoServicio {
         String tipo = festivo.getTipoFestivo().getTipo().trim().toUpperCase();
 
         switch (tipo) {
-           // Calcula festivos con fecha fija en el calendario
+        // Calcula festivos con fecha fija en el calendario
             case "FIJO":
                 return LocalDate.of(anio, festivo.getMes(), festivo.getDia());
 
-            // Ajusta festivos tipo puente al siguiente lunes
+        // Ajusta festivos tipo puente al siguiente lunes
             case "PUENTE":
                 return moverASiguienteLunes(
                         LocalDate.of(anio, festivo.getMes(), festivo.getDia())
                 );
-
+        // Calcula festivos religiosos basados en la fecha de Pascua
             case "PASCUA":
                 return PascuaUtil.calcularDomingoPascua(anio)
                         .plusDays(festivo.getDiasPascua());
