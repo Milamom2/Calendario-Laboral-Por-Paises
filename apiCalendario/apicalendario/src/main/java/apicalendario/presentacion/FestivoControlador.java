@@ -1,15 +1,19 @@
 package apicalendario.presentacion;
 
+import java.time.LocalDate;
 import java.util.List;
 
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import apicalendario.core.dominio.Festivo;
+import apicalendario.core.dto.FestivoCalculadoDto;
 import apicalendario.core.interfaces.servicios.IFestivoServicio;
 
 @RestController
@@ -56,5 +60,21 @@ public class FestivoControlador {
     @RequestMapping(value = "/pais/{idPais}", method = RequestMethod.GET)
     public List<Festivo> listarPorPais(@PathVariable Long idPais) {
         return servicio.listarPorPais(idPais);
+    }
+
+    @CrossOrigin(origins = "*")
+    @RequestMapping(value = "/verificar", method = RequestMethod.GET)
+    public boolean esFestivo(
+            @RequestParam Long idPais,
+            @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate fecha) {
+        return servicio.esFestivo(idPais, fecha);
+    }
+
+    @CrossOrigin(origins = "*")
+    @RequestMapping(value = "/anio", method = RequestMethod.GET)
+    public List<FestivoCalculadoDto> listarFestivosPorPaisYAnio(
+            @RequestParam Long idPais,
+            @RequestParam int anio) {
+        return servicio.listarFestivosPorPaisYAnio(idPais, anio);
     }
 }
