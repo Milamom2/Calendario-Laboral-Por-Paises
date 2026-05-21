@@ -5,10 +5,9 @@ import java.util.List;
 
 import apicalendario.core.dominio.Festivo;
 import apicalendario.dto.DiaCalendarioDTO;
-public interface IFestivoServicio {
-
+public interface IFestivoServicio { 
     List<Festivo> listar();
-
+// se define la interfas de servicio para la gestion de festivos con los metodos necesarios para su manejo.
     Festivo obtenerPorId(Long id);
 
     Festivo guardar(Festivo festivo);
