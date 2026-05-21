@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Consulta Calendario Laboral</title>
+</head>
+<body>
+
+    <h1>Consulta de Calendario Laboral</h1>
+
+    <form>
+        <label for="pais">País:</label>
+        <select id="pais" name="pais">
+            <option value="">Seleccione un país</option>
+            <option value="1">Colombia</option>
+        </select>
+
+        <br><br>
+
+        <label for="anio">Año:</label>
+        <input type="number" id="anio" name="anio" placeholder="Ingrese el año">
+
+        <br><br>
+
+        <button type="button">Consultar calendario</button>
+    </form>
+
+    <hr>
+
+    <h2>Resultado</h2>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Fecha</th>
+                <th>Festivo</th>
+                <th>Tipo</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td colspan="3">Aquí se mostrarán los festivos consultados.</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>

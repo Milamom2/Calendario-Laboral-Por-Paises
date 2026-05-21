@@ -5,7 +5,7 @@ import java.time.LocalDate;
 public class PascuaUtil {
 
     private PascuaUtil() {
-    }
+    }// se aplica formula de pascua  
 
     public static LocalDate calcularDomingoPascua(int anio) {
         int a = anio % 19;
