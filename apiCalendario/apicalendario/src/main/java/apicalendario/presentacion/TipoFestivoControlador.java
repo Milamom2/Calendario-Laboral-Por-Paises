@@ -17,7 +17,7 @@ import apicalendario.core.interfaces.servicios.ITipoFestivoServicio;
 public class TipoFestivoControlador {
 
     private final ITipoFestivoServicio servicio;
-
+// se inyecta el servicio de tipo de festivo para manejar las operaciones relacionadas con los tipos de festivo
     public TipoFestivoControlador(ITipoFestivoServicio servicio) {
         this.servicio = servicio;
     }
