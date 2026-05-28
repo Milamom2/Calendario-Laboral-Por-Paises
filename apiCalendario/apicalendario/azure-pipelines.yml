@@ -16,13 +16,14 @@ steps:
     jdkSourceOption: 'PreInstalled'
 
 - script: |
+    cd apiCalendario/apicalendario
     chmod +x mvnw
     ./mvnw clean package
   displayName: 'Compilar aplicación Spring Boot'
 
 - task: CopyFiles@2
   inputs:
-    SourceFolder: 'target'
+    SourceFolder: 'apiCalendario/apicalendario/target'
     Contents: '*.jar'
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
   displayName: 'Copiar archivo JAR'
