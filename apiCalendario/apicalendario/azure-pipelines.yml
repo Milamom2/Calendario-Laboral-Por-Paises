@@ -1,4 +1,3 @@
-```yaml
 trigger:
 - main
 
@@ -18,12 +17,13 @@ steps:
 
 - script: |
     chmod +x mvnw
-    ./mvnw clean package
+    ./mvnw clean package -f pom.xml
+  workingDirectory: apiCalendario/apicalendario
   displayName: 'Compilar aplicación Spring Boot'
 
 - task: CopyFiles@2
   inputs:
-    SourceFolder: 'target'
+    SourceFolder: 'apiCalendario/apicalendario/target'
     Contents: '*.jar'
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
   displayName: 'Copiar archivo JAR'
@@ -33,4 +33,3 @@ steps:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'drop'
   displayName: 'Publicar artefacto'
-```
