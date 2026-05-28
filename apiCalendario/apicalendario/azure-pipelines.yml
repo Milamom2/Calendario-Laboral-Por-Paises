@@ -16,7 +16,12 @@ steps:
     jdkSourceOption: 'PreInstalled'
 
 - script: |
+    - script: |
+    pwd
+    ls
     cd apiCalendario/apicalendario
+    pwd
+    ls
     chmod +x mvnw
     ./mvnw clean package
   displayName: 'Compilar aplicación Spring Boot'
