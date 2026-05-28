@@ -15,10 +15,15 @@ steps:
     jdkArchitectureOption: 'x64'
     jdkSourceOption: 'PreInstalled'
 
-- script: |
+- script: ||
+    pwd
+    ls
+    ls apiCalendario
+    ls apiCalendario/apicalendario
+    cd apiCalendario/apicalendario
+    pwd
     chmod +x mvnw
-    ./mvnw clean package -f pom.xml
-  workingDirectory: apiCalendario/apicalendario
+    ./mvnw clean package
   displayName: 'Compilar aplicación Spring Boot'
 
 - task: CopyFiles@2
