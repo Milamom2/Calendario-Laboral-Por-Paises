@@ -16,22 +16,14 @@ steps:
     jdkSourceOption: 'PreInstalled'
 
 - script: |
-    echo "ESTOY USANDO EL YAML NUEVO"
-    pwd
-    ls
     chmod +x mvnw
     ./mvnw clean package
   displayName: 'Compilar aplicación Spring Boot'
 
-- task: CopyFiles@2
+- task: AzureWebApp@1
   inputs:
-    SourceFolder: 'apiCalendario/apicalendario/target'
-    Contents: '*.jar'
-    TargetFolder: '$(Build.ArtifactStagingDirectory)'
-  displayName: 'Copiar archivo JAR'
-
-- task: PublishBuildArtifacts@1
-  inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'drop'
-  displayName: 'Publicar artefacto'
+    azureSubscription: 'conexion-calendario-api'
+    appType: 'webAppLinux'
+    appName: 'Calendario-apiweb'
+    package: 'target/*.jar'
+  displayName: 'Desplegar API en Azure App Service'
